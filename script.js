@@ -182,7 +182,7 @@ function calculateDesiredGPA(totalMarks, desiredGpa) {
     return final;
 }
 
-function calculateDesiredGPA(totalMarks, desiredGpa) {
+function calculateDesiredLabGPA(totalMarks, desiredGpa) {
     let requiredMarks;
     if (desiredGpa >= 4) {
         requiredMarks = 84.5;
