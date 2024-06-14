@@ -97,9 +97,9 @@ function calculateLabGPAFromForm(formData) {
     const quiz = parseFloat(formData.get('quiz').value) ;
     const mids = parseFloat(formData.get('mids').value) ;
     const finals = parseFloat(formData.get('finals').value) ;
-    const labAssg = parseFloat(formData.get('lab_assg').value) ;
-    const labMid = parseFloat(formData.get('lab_mid').value) 
-    const labFinal = parseFloat(formData.get('lab_final').value);
+    const labAssg = parseFloat(formData.get('lab-assg').value) ;
+    const labMid = parseFloat(formData.get('lab-mid').value) 
+    const labFinal = parseFloat(formData.get('lab-final').value);
 
     let totalMarks = assignment + quiz + mids + finals;
     let labmarks = labAssg + labMid + labFinal;
@@ -122,9 +122,9 @@ function calculateDesiredLGPAFromForm(formData) {
     const assignment = parseFloat(formData.get('assignment')) || 0;
     const quiz = parseFloat(formData.get('quiz')) || 0;
     const mids = parseFloat(formData.get('mids')) || 0;
-    const labAssg = parseFloat(formData.get('lab_assg')) || 0;
-    const labMid = parseFloat(formData.get('lab_mid')) || 0;
-    const labFinal = parseFloat(formData.get('lab_final')) || 0;
+    const labAssg = parseFloat(formData.get('lab-assg')) || 0;
+    const labMid = parseFloat(formData.get('lab-mid')) || 0;
+    const labFinal = parseFloat(formData.get('lab-final')) || 0;
     const desiredGpa = parseFloat(formData.get('desired_gpa')) || 0;
 
     let totalMarks = assignment + quiz + mids;
