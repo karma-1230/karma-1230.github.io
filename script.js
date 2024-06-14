@@ -76,7 +76,7 @@ document.addEventListener('DOMContentLoaded', () => {
             if (gpa !== undefined) {
                 console.log("Calculated GPA:", gpa);
                 localStorage.setItem('gpa', gpa);
-                window.location.href = '/templates/result.html';
+                //window.location.href = '/templates/result.html';
                 
             }
         });
