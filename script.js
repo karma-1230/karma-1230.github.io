@@ -75,7 +75,7 @@ document.addEventListener('DOMContentLoaded', () => {
             if (gpa !== undefined) {
                 console.log("Calculated GPA:", gpa);
                 localStorage.setItem('gpa', gpa);
-                //window.location.href = '/templates/result.html';
+                window.location.href = '/templates/result.html';
                 
             }
         });
@@ -129,7 +129,7 @@ function calculateDesiredLGPAFromForm(formData) {
 
     let totalMarks = assignment + quiz + mids;
     let labmarks = labAssg + labMid + labFinal;
-    let marks = ((75/100)*totalMarks) - ((25/100)*labmarks) ;
+    let marks = (3*totalMarks - 5*labmarks)/3;
 
     return calculateDesiredLabGPA(marks,desiredGpa).toFixed(2);
 }
@@ -182,28 +182,32 @@ function calculateDesiredGPA(totalMarks, desiredGpa) {
     return final;
 }
 
-function calculateDesiredLabGPA(marks, desiredGpa) {
+function calculateDesiredGPA(totalMarks, desiredGpa) {
+    let requiredMarks;
     if (desiredGpa >= 4) {
-        return ((84.5 - marks) * (100 / 75));
+        requiredMarks = 84.5;
     } else if (desiredGpa<4 &&desiredGpa >= 3.7) {
-        return ((79.5 - marks) * (100 / 75));
+        requiredMarks = 79.5;
     } else if (desiredGpa >= 3.3 &&desiredGpa<3.7) {
-        return ((74.5 - marks) * (100 / 75));
+        requiredMarks = 74.5;
     } else if (desiredGpa >= 3.0 && desiredGpa<3.3) {
-        return ((69.5 - marks) * (100 / 75));
+        requiredMarks = 69.5;
     } else if (desiredGpa >= 2.7&& desiredGpa<3.0) {
-        return ((64.5 - marks) * (100 / 75));
+        requiredMarks = 64.5;
     } else if (desiredGpa >= 2.3 && desiredGpa<2.7) {
-        return ((59.5 - marks) * (100 / 75));
+        requiredMarks = 59.5;
     } else if (desiredGpa >= 2.0 &&desiredGpa<2.3) {
-        return ((54.5 - marks) * (100 / 75));
+        requiredMarks = 54.5;
     } else if (desiredGpa >= 1.7 &&desiredGpa<2.0) {
-        return ((49.5 - marks) * (100 / 75));
+        requiredMarks = 49.5;
     } else if (desiredGpa >= 1.3 && desiredGpa<1.7) {
-        return ((44.5 - marks) * (100 / 75));
+        requiredMarks = 44.5;
     } else if (desiredGpa >= 1.0 && desiredGpa<1.3) {
-        return ((39.5 - marks) * (100 / 75));
+        requiredMarks = 39.5;
     } else {
-        return 0;
+        requiredMarks = 0;
     }
+    const final = ((4*requiredMarks)/3) - totalmarks;
+    return final;
+    
 }
