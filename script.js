@@ -54,7 +54,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
             const formData = new FormData(form);
             console.log("Form Data:", Object.fromEntries(formData.entries()));
-
             let gpa;
             switch (form.name) {
                 case 'regularGPAForm':
@@ -94,13 +93,13 @@ function calculateGPA(formData) {
 }
 
 function calculateLabGPAFromForm(formData) {
-    const assignment = parseFloat(formData.get('assignment')) || 0;
-    const quiz = parseFloat(formData.get('quiz')) || 0;
-    const mids = parseFloat(formData.get('mids')) || 0;
-    const finals = parseFloat(formData.get('finals')) || 0;
-    const labAssg = parseFloat(formData.get('lab_assg')) || 0;
-    const labMid = parseFloat(formData.get('lab_mid')) || 0;
-    const labFinal = parseFloat(formData.get('lab_final')) || 0;
+    const assignment = parseFloat(formData.get('assignment')) ;
+    const quiz = parseFloat(formData.get('quiz')) ;
+    const mids = parseFloat(formData.get('mids')) ;
+    const finals = parseFloat(formData.get('finals')) ;
+    const labAssg = parseFloat(formData.get('lab_assg')) ;
+    const labMid = parseFloat(formData.get('lab_mid')) 
+    const labFinal = parseFloat(formData.get('lab_final'));
 
     let totalMarks = assignment + quiz + mids + finals;
     let labmarks = labAssg + labMid + labFinal;
