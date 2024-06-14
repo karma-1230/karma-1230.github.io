@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculate</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <header>
+        <h1 class="logo">Where You Stand</h1>
+        <nav class="navigation">
+            <a href="/templates/about.html">About</a>
+            <button type="button" class="btnlogin">Calculate</button>
+        </nav>
+    </header>
+    <div class="wrapper">
+        <span class="icon-close"><ion-icon name="close"></ion-icon></span>
+        <div class="form-box login" id="calculateForm gpa">
+            <h2>Calculate</h2>
+            <form method="post" action="/submit_form_gpa" name='regularGPAForm' >
+                <div class="input-box">
+                    <span class="icon"><ion-icon name="paw-outline"></ion-icon></span>
+                    <input type="text" id = "assignment" name="assignment" required>
+                    <label>assignment</label>
+                </div>
+                <div class="input-box">
+                    <span class="icon"><ion-icon name="heart-half-outline"></ion-icon></span>
+                    <input type="text" id="quiz" name="quiz" required>
+                    <label>quiz</label>
+                </div>
+                <div class="input-box">
+                    <span class="icon"><ion-icon name="headset-outline"></ion-icon></span>
+                    <input type="text" id="mids" name="mids" required>
+                    <label>mids</label>
+                </div>
+                <div class="input-box">
+                    <span class="icon"><ion-icon name="git-network-outline"></ion-icon></span>
+                    <input type="text" id="finals" name="finals" required>
+                    <label>finals</label>
+                </div>
+                <button class="btn" type="submit" >Calculate</button>
+                <div class="register">
+                    <p>Dont know your Finals Marks?<a href="#" class="register-link">Desired Gpa</a> </p>
+                </div>
+                <div class="register">
+                    <p>Subject has Lab?<a href="#" class="lab-link">Lab Subject</a> </p>
+                </div>
+                <div class="register">
+                    <p>Dont know your Finals Marks?<a href="#" class="dlab-link">Lab Desired Gpa</a> </p>
+                </div>
+            </form>
+        </div>
+        <div class="form-box register"  id="calculateForm desgpa">
+            <h2>Register</h2>
+            <form method="post" action="/submit_form_desgpa" name='desiredGPAForm'>
+                <div class="input-box">
+                    <span class="icon"><ion-icon name="paw-outline"></ion-icon></span>
+                    <input type="text"  name="assignment" id="assignment" required>
+                    <label>assignment</label>
+                </div>
+                <div class="input-box">
+                    <span class="icon"><ion-icon name="heart-half-outline"></ion-icon></span>
+                    <input type="text" name="quiz" id="quiz" required>
+                    <label>quiz</label>
+                </div>
+                <div class="input-box">
+                    <span class="icon"><ion-icon name="headset-outline"></ion-icon></span>
+                    <input type="text" name="mids" id="mids" required>
+                    <label>mids</label>
+                </div>
+                <div class="input-box">
+                    <span class="icon"><ion-icon name="sparkles-outline"></ion-icon></span>
+                    <input type="text" name="desired_gpa" id="desired_gpa" required>
+                    <label>Desired Gpa</label>
+                </div>
+                <button class="btn" type="submit">Calculate</button>
+                <div class="login">
+                    <p>Do know your Finals Marks?<a href="#" class="login-link">Calculate Gpa</a> </p>
+                </div>
+            </form>
+        </div>
+        <div class="form-box lab"  id="calculateForm Lgpa">
+            <h2>Calculate</h2>
+            <form method="post" action="/submit_form_Lgpa" name='labGPAForm'>
+                <div class="input-box">
+                    <span class="icon"><ion-icon name="paw-outline"></ion-icon></span>
+                    <input type="text" name="assignment" id="assignment" required>
+                    <label>assignment</label>
+                </div>
+                <div class="input-box">
+                    <span class="icon"><ion-icon name="heart-half-outline"></ion-icon></span>
+                    <input type="text" name="quiz" id="quiz" required>
+                    <label>quiz</label>
+                </div>
+                <div class="input-box">
+                    <span class="icon"><ion-icon name="headset-outline"></ion-icon></span>
+                    <input type="text" name="mids" id="mids" required>
+                    <label>mids</label>
+                </div>
+                <div class="input-box">
+                    <span class="icon"><ion-icon name="git-network-outline"></ion-icon></span>
+                    <input type="text" name="finals" id="finals" required>
+                    <label>finals</label>
+                </div>
+                <div class="input-box">
+                    <span class="icon"><ion-icon name="moon-outline"></ion-icon></span>
+                    <input type="text" name="lab-assg" id="lab_assg" required>
+                    <label>Lab Assignment</label>
+                </div>
+                <div class="input-box">
+                    <span class="icon"><ion-icon name="pizza-outline"></ion-icon></span>
+                    <input type="text" name="lab-mid" id="lab_mid" required>
+                    <label>Lab Mid</label>
+                </div>
+                <div class="input-box">
+                    <span class="icon"><ion-icon name="phone-portrait-outline"></ion-icon></span>
+                    <input type="text" name="lab-final" id="lab_final" required>
+                    <label>Lab Final</label>
+                </div>
+                <button class="btn" type="submit">Calculate</button>
+                <div class="register">
+                    <p>Subject doesn't have Lab?<a href="#" class="theory-link">Subject</a> </p>
+                </div>
+            </form>
+        </div>
+        <div class="form-box Dlab" id="calculateForm desLgpa">
+            <h2>Calculate</h2>
+            <form method="post" name='desiredLGPAForm' action="/submit_form_desLgpa">
+                <div class="input-box">
+                    <span class="icon"><ion-icon name="paw-outline"></ion-icon></span>
+                    <input type="text" name="assignment" id="assignment" required>
+                    <label>assignment</label>
+                </div>
+                <div class="input-box">
+                    <span class="icon"><ion-icon name="heart-half-outline"></ion-icon></span>
+                    <input type="text" name="quiz" id="quiz" required>
+                    <label>quiz</label>
+                </div>
+                <div class="input-box">
+                    <span class="icon"><ion-icon name="headset-outline"></ion-icon></span>
+                    <input type="text" name="mids" id="mids" required>
+                    <label>mids</label>
+                </div>
+                <div class="input-box">
+                    <span class="icon"><ion-icon name="moon-outline"></ion-icon></span>
+                    <input type="text" name="lab-assg" id="lab_assg" required>
+                    <label>Lab Assignment</label>
+                </div>
+                <div class="input-box">
+                    <span class="icon"><ion-icon name="pizza-outline"></ion-icon></span>
+                    <input type="text" name="lab-mid" id="lab_mid" required>
+                    <label>Lab Mid</label>
+                </div>
+                <div class="input-box">
+                    <span class="icon"><ion-icon name="phone-portrait-outline"></ion-icon></span>
+                    <input type="text" name="lab-final" id="lab_final" required>
+                    <label>Lab Final</label>
+                </div>
+                <div class="input-box">
+                    <span class="icon"><ion-icon name="git-network-outline"></ion-icon></span>
+                    <input type="text"  name="desired_gpa" id="desired_gpa" required>
+                    <label>Desired GPA</label>
+                </div>
+                <button class="btn" type="submit">Calculate</button>
+                <div class="register">
+                    <p>Know Your Subject Marks?<a href="#" class="dlabno-link">Subject</a> </p>
+                </div>
+            </form>
+        </div>
+    </div>
+    <script src="/script.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</body>
+</html>
