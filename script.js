@@ -76,7 +76,8 @@ document.addEventListener('DOMContentLoaded', () => {
             if (gpa !== undefined) {
                 console.log("Calculated GPA:", gpa);
                 localStorage.setItem('gpa', gpa);
-                window.location.href = '/templates/result.html';
+                //window.location.href = '/templates/result.html';
+                
             }
         });
     });
@@ -146,6 +147,7 @@ function calculate_GPA(totalLabs) {
     else if (totalLabs >= 44.5 && totalLabs <49.5) return 1.3;
     else if (totalLabs >= 39.5 && totalLabs <44.5) return 1.0;
     else return 0;
+    console.log("marks",totalLabs);
 }
 
 
