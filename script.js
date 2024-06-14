@@ -89,7 +89,7 @@ function calculateGPA(formData) {
     const finals = parseFloat(formData.get('finals')) || 0;
 
     let totalMarks = assignment + quiz + mids + finals;
-    return calculateGPA(totalMarks).toFixed(2);
+    return calculate_GPA(totalMarks).toFixed(2);
 }
 
 function calculateLabGPAFromForm(formData) {
@@ -105,7 +105,7 @@ function calculateLabGPAFromForm(formData) {
     let labmarks = labAssg + labMid + labFinal;
     let totalLabs = ((75 / 100) * totalMarks) + ((25 /100) * labmarks);
 
-    return calculateGPA(totalLabs).toFixed(2);
+    return calculate_GPA(totalLabs).toFixed(2);
 }
 
 function calculateDesiredGPAFromForm(formData) {
@@ -134,7 +134,7 @@ function calculateDesiredLGPAFromForm(formData) {
     return calculateDesiredLabGPA(marks,desiredGpa).toFixed(2);
 }
 
-function calculateGPA(totalLabs) {
+function calculate_GPA(totalLabs) {
     if (totalLabs >= 84.5) return 4;
     else if (totalLabs >= 79.5 && totalLabs <84.5) return 3.7;
     else if (totalLabs >= 74.5 && totalLabs <79.5) return 3.3;
