@@ -93,13 +93,13 @@ function calculateGPA(formData) {
 }
 
 function calculateLabGPAFromForm(formData) {
-    const assignment = parseFloat(formData.get('assignment').value) ;
-    const quiz = parseFloat(formData.get('quiz').value) ;
-    const mids = parseFloat(formData.get('mids').value) ;
-    const finals = parseFloat(formData.get('finals').value) ;
-    const labAssg = parseFloat(formData.get('lab-assg').value) ;
-    const labMid = parseFloat(formData.get('lab-mid').value) 
-    const labFinal = parseFloat(formData.get('lab-final').value);
+    const assignment = parseFloat(formData.get('assignment')) ;
+    const quiz = parseFloat(formData.get('quiz')) ;
+    const mids = parseFloat(formData.get('mids')) ;
+    const finals = parseFloat(formData.get('finals')) ;
+    const labAssg = parseFloat(formData.get('lab-assg')) ;
+    const labMid = parseFloat(formData.get('lab-mid')) 
+    const labFinal = parseFloat(formData.get('lab-final'));
 
     let totalMarks = assignment + quiz + mids + finals;
     let labmarks = labAssg + labMid + labFinal;
