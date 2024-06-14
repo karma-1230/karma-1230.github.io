@@ -89,7 +89,7 @@ function calculateGPA(formData) {
     const finals = parseFloat(formData.get('finals')) || 0;
 
     let totalMarks = assignment + quiz + mids + finals;
-    return calculateregularGPA(totalMarks).toFixed(2);
+    return calculateGPA(totalMarks).toFixed(2);
 }
 
 function calculateLabGPAFromForm(formData) {
@@ -103,9 +103,9 @@ function calculateLabGPAFromForm(formData) {
 
     let totalMarks = assignment + quiz + mids + finals;
     let labmarks = labAssg + labMid + labFinal;
-    let totalLabs = ((75 / 100) * totalMarks) + ((25 /100) * labMarks);
+    let totalLabs = ((75 / 100) * totalMarks) + ((25 /100) * labmarks);
 
-    return calculateLabGPA(totalLabs).toFixed(2);
+    return calculateGPA(totalLabs).toFixed(2);
 }
 
 function calculateDesiredGPAFromForm(formData) {
@@ -134,33 +134,20 @@ function calculateDesiredLGPAFromForm(formData) {
     return calculateDesiredLabGPA(marks,desiredGpa).toFixed(2);
 }
 
-function calculateLabGPA(totalLabs) {
+function calculateGPA(totalLabs) {
     if (totalLabs >= 84.5) return 4;
-    else if (totalLabs >= 79.5) return 3.7;
-    else if (totalLabs >= 74.5) return 3.3;
-    else if (totalLabs >= 69.5) return 3.0;
-    else if (totalLabs >= 64.5) return 2.7;
-    else if (totalLabs >= 59.5) return 2.3;
-    else if (totalLabs >= 54.5) return 2.0;
-    else if (totalLabs >= 49.5) return 1.7;
-    else if (totalLabs >= 44.5) return 1.3;
-    else if (totalLabs >= 39.5) return 1.0;
+    else if (totalLabs >= 79.5 && totalLabs <84.5) return 3.7;
+    else if (totalLabs >= 74.5 && totalLabs <79.5) return 3.3;
+    else if (totalLabs >= 69.5 && totalLabs <74.5) return 3.0;
+    else if (totalLabs >= 64.5 && totalLabs <69.5) return 2.7;
+    else if (totalLabs >= 59.5 && totalLabs <64.5) return 2.3;
+    else if (totalLabs >= 54.5 && totalLabs <59.5) return 2.0;
+    else if (totalLabs >= 49.5 && totalLabs <54.5) return 1.7;
+    else if (totalLabs >= 44.5 && totalLabs <49.5) return 1.3;
+    else if (totalLabs >= 39.5 && totalLabs <44.5) return 1.0;
     else return 0;
 }
 
-function calculateregularGPA(totalMarks) {
-    if (totalMarks >= 84.5) return 4;
-    else if (totalMarks >= 79.5) return 3.7;
-    else if (totalMarks >= 74.5) return 3.3;
-    else if (totalMarks >= 69.5) return 3.0;
-    else if (totalMarks >= 64.5) return 2.7;
-    else if (totalMarks >= 59.5) return 2.3;
-    else if (totalMarks >= 54.5) return 2.0;
-    else if (totalMarks >= 49.5) return 1.7;
-    else if (totalMarks >= 44.5) return 1.3;
-    else if (totalMarks >= 39.5) return 1.0;
-    else return 0;
-}
 
 function calculateDesiredGPA(totalMarks, desiredGpa) {
     let requiredMarks;
