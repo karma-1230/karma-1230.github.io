@@ -103,7 +103,7 @@ function calculateLabGPAFromForm(formData) {
 
     let totalMarks = assignment + quiz + mids + finals;
     let labmarks = labAssg + labMid + labFinal;
-    let totalLabs = ((75 * totalMarks) / 100) + ((25 * labmarks) / 100);
+    let totalLabs = ((75 / 100) * totalMarks) + ((25 /100) * labMarks);
 
     return calculateLabGPA(totalLabs).toFixed(2);
 }
