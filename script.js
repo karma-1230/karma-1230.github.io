@@ -207,7 +207,7 @@ function calculateDesiredLabGPA(totalMarks, desiredGpa) {
     } else {
         requiredMarks = 0;
     }
-    const final = ((4*requiredMarks)/3) - totalmarks;
+    const final = ((4*requiredMarks)/3) - totalMarks;
     return final;
     
 }
