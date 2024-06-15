@@ -128,10 +128,9 @@ function calculateDesiredLGPAFromForm(formData) {
     const desiredGpa = parseFloat(formData.get('desired_gpa')) || 0;
 
     let totalMarks = assignment + quiz + mids;
-    let labmarks = labAssg + labMid + labFinal;
-    let marks = (totalMarks  +labmarks);
+    let labmarks = labAssg + labMid + labFinal;
 
-    return calculateDesiredLabGPA(marks,desiredGpa).toFixed(2);
+    return calculateDesiredLabGPA(totalMarks,labmarks,desiredGpa).toFixed(2);
 }
 
 function calculate_GPA(totalLabs) {
@@ -182,28 +181,32 @@ function calculateDesiredGPA(totalMarks, desiredGpa) {
     return final;
 }
 
-function calculateDesiredLabGPA(marks, desiredGpa) {
+function calculateDesiredLabGPA(totalMarks,labmarks,desiredGpa) {
+    let Gpa
     if (desiredGpa >= 4) {
-        return ((84.5 - marks) * (100 / 75));
+        Gpa = 84.5;
     } else if (desiredGpa<4 &&desiredGpa >= 3.7) {
-        return ((79.5 - marks) * (100 / 75));
+        Gpa = 79.5;
     } else if (desiredGpa >= 3.3 &&desiredGpa<3.7) {
-        return ((74.5 - marks) * (100 / 75));
+        Gpa = 74.5;
     } else if (desiredGpa >= 3.0 && desiredGpa<3.3) {
-        return ((69.5 - marks) * (100 / 75));
+        Gpa = 69.5;
     } else if (desiredGpa >= 2.7&& desiredGpa<3.0) {
-        return ((64.5 - marks) * (100 / 75));
+       Gpa = 64.5;
     } else if (desiredGpa >= 2.3 && desiredGpa<2.7) {
-        return ((59.5 - marks) * (100 / 75));
+        Gpa = 59.5;
     } else if (desiredGpa >= 2.0 &&desiredGpa<2.3) {
-        return ((54.5 - marks) * (100 / 75));
+        Gpa = 54.5;
     } else if (desiredGpa >= 1.7 &&desiredGpa<2.0) {
-        return ((49.5 - marks) * (100 / 75));
+        Gpa = 49.5;
     } else if (desiredGpa >= 1.3 && desiredGpa<1.7) {
-        return ((44.5 - marks) * (100 / 75));
+        Gpa = 44.5;
     } else if (desiredGpa >= 1.0 && desiredGpa<1.3) {
-        return ((39.5 - marks) * (100 / 75));
+        Gpa = 39.5;
     } else {
         return 0;
     }
+    let required;
+    required = ((4*(Gpa - (0.25*labmarks)))/3) - totalMarks;
+   return required;
 }
